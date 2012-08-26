@@ -113,8 +113,9 @@ class jenkins {
         }
 
 	exec { "start_jenkins":
-		command => "nohup java -jar jenkins.war > /var/log/jenkins.log 2>&1",
+		command => "java -jar jenkins.war &",
 		path => "/var/lib/jenkins",
+		require => [ File["/var/lib/jenkins/jenkins.war"] ],
 	}
 
 
