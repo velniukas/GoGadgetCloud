@@ -6,10 +6,12 @@ class jenkins {
 
 	file { "/var/lib/jenkins":
 		ensure => "directory",
+		mode => 0664,
 	}
 
 	file { "/var/lib/jenkins/plugins":
 		ensure => "directory",
+		mode => 0664,
 	}
 	
 	file { "/var/lib/jenkins/jenkins.war":
@@ -111,12 +113,6 @@ class jenkins {
                 owner => "root",
                 group => "root"
         }
-
-	exec { "start_jenkins":
-		command => "java -jar jenkins.war &",
-		path => "/var/lib/jenkins",
-		require => [ File["/var/lib/jenkins/jenkins.war"] ],
-	}
 
 
 	service { "jenkins":
