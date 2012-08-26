@@ -6,12 +6,16 @@ class jenkins {
 
 	file { "/var/lib/jenkins":
 		ensure => "directory",
-		mode => 0664,
+		owner => "jenkins",
+		group => "root",
+		mode => 0755,
 	}
 
 	file { "/var/lib/jenkins/plugins":
 		ensure => "directory",
-		mode => 0664,
+		owner => "jenkins",
+		group => "root",
+		mode => 0755,
 	}
 	
 	file { "/var/lib/jenkins/jenkins.war":
