@@ -11,7 +11,7 @@ class jenkins {
 	service { "jenkins":
 		ensure => running,
 		enable => true,
-		require => [ Package["jenkins"], File["/etc/memcached.conf"] ],
+		require => [ Package["jenkins"], File["/etc/jenkins/jenkins.war"] ],
 	}
 
 }
