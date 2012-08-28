@@ -129,7 +129,7 @@ setup for RHEL 5
 
 RHEL 6
 
-  sudo rpm -ivh http://yum.puppetlabs.com/el/6/products/i386/puppetlabs-release-6-5.noarch.rpm
+    sudo rpm -ivh http://yum.puppetlabs.com/el/6/products/i386/puppetlabs-release-6-5.noarch.rpm
 
 On your puppet master
 
@@ -180,7 +180,7 @@ you should see a line like 'myclient.domain.com' or similar
     sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key
     yum install jenkins
 
-  /etc/init.d/jenkins start
+    /etc/init.d/jenkins start
 
 You can test this by pointing your browser to the jenkins dashboard http://your.agent.machine.ipaddress:8080
 
@@ -195,15 +195,15 @@ Setup puppet git repo
 
 generate an ssh key for git to use
 
-  ssh-keygen -f git.rsa
+    ssh-keygen -f git.rsa
 
 on the server, create a puppet manifests repository
 
-  mkdir -p /etc/puppet/modules /etc/puppet/manifests
+    mkdir -p /etc/puppet/modules /etc/puppet/manifests
 
 create the default site configuration for _all_ nodes
 
-  echo "class default {\n\n\n}" > site.pp
+    echo "class default {\n\n\n}" > site.pp
 
 manifests contains machine configurations
 
